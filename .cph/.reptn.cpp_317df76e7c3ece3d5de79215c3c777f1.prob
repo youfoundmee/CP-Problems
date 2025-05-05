@@ -1,0 +1,1 @@
+{"name":"Local: reptn","url":"c:\\Users\\Lenovo\\Sameer\\reptn.cpp","tests":[{"id":1724787777121,"input":"AAAAAAAAAA","output":""},{"id":1724787793299,"input":"ACACACACAC","output":""},{"id":1724787803583,"input":"ACCGGGTTTT","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Lenovo\\Sameer\\reptn.cpp","group":"local","local":true}

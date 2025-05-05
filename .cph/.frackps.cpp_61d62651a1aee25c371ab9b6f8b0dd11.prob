@@ -1,0 +1,1 @@
+{"name":"Local: frackps","url":"c:\\Users\\Lenovo\\Sameer\\frackps.cpp","tests":[{"id":1725621402648,"input":"3\n4 2\n2 6 4 1\n1 3\n3\n2 2\n4 8","output":"2\n0\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Lenovo\\Sameer\\frackps.cpp","group":"local","local":true}
