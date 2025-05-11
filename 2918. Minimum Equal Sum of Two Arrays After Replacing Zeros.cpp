@@ -1,67 +1,107 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <math.h>
+#include <bits/stdc++.h>
+#include <string>
+#include <cstring>
+
+#define ll long long
+#define nl endl
+#define ld long double
+#define gcd(a,b) __gcd<long long>(a,b)
+#define lcm(a,b) (a * (b / gcd(a,b)))
+
+#define pb push_back
+#define umii unordered_map<int,int>
+#define umci unordered_map<char,int>
+#define umcc unordered_map<char,char>
+
+#define mii map<int,int>
+#define mci map<char,int>
+#define mcc map<char,char>
+#define mapsi map<string,int>
+#define dmp map<int, map<int,int>>
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vvpii vector<vector<pii>>
+#define si set<int>
+#define usi unordered_set<int>
+#define sd set<int, greater<int>>
+#define msi multiset<int>
+#define msd multiset<int, greater<int>>
+#define dq deque<int>
+
+#define f(i,n) for(int i=0;i<n;i++)
+#define f1(i,n) for(int i=1;i<=n;i++)
+#define pii pair<int,int>
+#define piii pair<int,pair<int,int>>
+#define all(x) x.begin(),x.end()
+#define allr(x) x.rbegin(),x.rend()
+
+#define ff first
+#define ss second
+#define lb lower_bound
+#define ub upper_bound
+
+#define inp(k) long long k; cin>>k
+#define inp2(n,k) long long n, k; cin>>n; cin>>k
+#define inp3(a,b,c) long long a, b, c; cin>>a>>b>>c
+#define inp4(a,b,c,d) long long a, b, c, d; cin>>a>>b>>c>>d
+
+#define fr(i,a,b) for(long long i=a;i<b;i++)
+#define rf(i,a,b) for(long long i=a;i>=b;i--)
+#define qsort(a,n) sort(a+0, a+n);
+#define revqsort(a,n) sort(a+0, a+n, greater<int>());
+
+#define endl "\n"
+#define YES cout << "YES" << endl
+#define NO cout << "NO" << endl
+
 using namespace std;
 
-class Solution
-{
-public:
-    long long minSum(vector<int> &nums1, vector<int> &nums2)
-    {
-        ios_base::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
+const int MAX=200000;
+const long long int M  = 1000000007;
+const long long int Cplus=1e18;
+const double Cmin=1e-18;
+const int mod=1e9+7;
 
-        long long sum1 = 0, sum2 = 0;
-        int zero1 = 0, zero2 = 0;
+ll MOD(ll n){
+    return (n % M + M) % M;
+}
+ll mul(ll a, ll b){
+    return MOD(MOD(a) * MOD(b));
+}
+ll add(ll a, ll b){
+    return MOD(MOD(a) + MOD(b));
+}
 
-        for (int x : nums1)
-        {
-            sum1 += x;
-            if (x == 0)
-                zero1++;
-        }
-        for (int x : nums2)
-        {
-            sum2 += x;
-            if (x == 0)
-                zero2++;
-        }
-
-        if (zero1 == 0 && zero2 == 0)
-            return sum1 == sum2 ? sum1 : -1;
-        if (zero2 == 0)
-            return (sum1 + zero1) > sum2 ? -1 : sum2;
-        if (zero1 == 0)
-            return (sum2 + zero2) > sum1 ? -1 : sum1;
-
-        return max(sum1 + zero1, sum2 + zero2);
+ll modPow(ll a, ll b) {
+    if (b == 0) return 1LL;
+    if (b == 1) return a % M;
+    ll res = 1;
+    while (b) {
+        if (b % 2 == 1) res = mul(res, a);
+        a = mul(a, a);
+        b = b / 2;
     }
-};
+    return res;
+}
+ll inv(ll x) {
+    return modPow(x, M - 2);
+}
 
-int main()
-{
-    Solution sol;
+ll divide(ll a, ll b) {
+    return mul(a, inv(b));
+}
 
-    // Test Case 1
-    vector<int> nums1 = {0, 2, 3};
-    vector<int> nums2 = {1, 2, 3};
-    cout << "Output: " << sol.minSum(nums1, nums2) << "\n"; // Expected: 6
+int32_t main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    int t = 1;
+    cin >> t;
+    while (t--) {
+    }
 
-    // Test Case 2
-    vector<int> nums3 = {1, 2, 3};
-    vector<int> nums4 = {1, 2, 3};
-    cout << "Output: " << sol.minSum(nums3, nums4) << "\n"; // Expected: 6
-
-    // Test Case 3
-    vector<int> nums5 = {0, 0, 1};
-    vector<int> nums6 = {2, 2};
-    cout << "Output: " << sol.minSum(nums5, nums6) << "\n"; // Expected: 4
-
-    // Test Case 4
-    vector<int> nums7 = {1, 2};
-    vector<int> nums8 = {1, 1, 0};
-    cout << "Output: " << sol.minSum(nums7, nums8) << "\n"; // Expected: 3
-
-    return 0;
 }
