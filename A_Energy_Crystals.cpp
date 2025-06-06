@@ -102,6 +102,10 @@ int32_t main() {
     int t = 1;
     cin >> t;
     while (t--) {
+        inp(n);
+        cout<<//no of bits 
+        2*(floor(log2(n)))+3<<endl;
+        
     }
 
 }
